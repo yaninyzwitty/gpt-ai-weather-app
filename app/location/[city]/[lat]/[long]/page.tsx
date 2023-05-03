@@ -31,7 +31,8 @@ async function WeatherPage({ params: { city, lat, long } }: Props) {
   });
   const results: Root = data.myQuery;
   const resultsToSend = cleanData(results, city);
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+  //we are in the server path not a client path
+  const res = await fetch(`${getBasePath()}/api/getSummary`, {
     headers: {
       "Content-Type": "application/json",
     },
